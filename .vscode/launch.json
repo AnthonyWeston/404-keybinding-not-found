@@ -1,0 +1,53 @@
+// A launch configuration that compiles the extension and then opens it inside a new window
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run Extension",
+			"type": "extensionHost",
+			"request": "launch",
+			"args": [
+				"--disable-extensions",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+			],
+			"outFiles": [
+				"${workspaceFolder}/dist/**/*.js",
+			],
+			"preLaunchTask": "${defaultBuildTask}",
+			"internalConsoleOptions": "openOnSessionStart",
+		},
+		{
+			"name": "Debug UI Tests",
+			"type": "node",
+			"request": "launch",
+			"program": "${workspaceFolder}/node_modules/.bin/extest",
+			"args": [
+				"setup-and-run",
+				"--code_version=1.60.0",
+				"${workspaceFolder}/out/test/*.js",
+				// "--mocha_config",
+				// "${workspaceFolder}/src/ui-test/.mocharc-debug.js"
+			],
+			"console": "internalConsole",
+			"internalConsoleOptions": "openOnSessionStart"
+		},
+		{
+			"name": "Extension Tests",
+			"type": "extensionHost",
+			"request": "launch",
+			"args": [
+				"--disable-extensions",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"--extensionTestsPath=${workspaceFolder}/out/test/suite/index",
+			],
+			"outFiles": [
+				"${workspaceFolder}/out/test/**/*.js"
+			],
+			"preLaunchTask": "npm: test-watch",
+			"internalConsoleOptions": "openOnSessionStart",
+		}
+	]
+}

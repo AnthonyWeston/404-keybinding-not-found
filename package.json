@@ -1,26 +1,29 @@
 {
   "name": "404-keybinding-not-found",
 	"displayName": "404 Keybinding Not Found",
+    "publisher": "AnthonyWeston",
 	"description": "A VSCode plugin that displays a 404 message for an assigned keybinding ",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.61.0"
+		"vscode": "^1.50.0"
 	},
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [
-        "onCommand:404-keybinding-not-found.helloWorld"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "404-keybinding-not-found.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
+    "activationEvents": [
+        "onCommand:404-keybinding-not-found.showNotFoundWarning"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "404-keybinding-not-found.showNotFoundWarning",
+                "category": "404 Keybinding Not Found",
+                "title": "Not found"
+            }
+        ]
+    },
+    "icon": "img/404.png",
 	"scripts": {
 		"vscode:prepublish": "npm run package",
 		"compile": "webpack",
@@ -33,7 +36,7 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.61.0",
+		"@types/vscode": "^1.50.0",
 		"@types/glob": "^7.1.4",
 		"@types/mocha": "^9.0.0",
 		"@types/node": "16.x",
