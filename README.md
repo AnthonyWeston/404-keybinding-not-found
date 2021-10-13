@@ -28,6 +28,8 @@ Initial release
 
 * Display a 404 message when the user uses an assigned keybinding.
 
+<!--
+
 -----------------------------------------------------------------------------------------------------------
 
 ## Following extension guidelines
@@ -50,3 +52,5 @@ Ensure that you've read through the extensions guidelines and follow the best pr
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
+
+-->
