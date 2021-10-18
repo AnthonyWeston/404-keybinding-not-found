@@ -2,7 +2,7 @@
     "name": "404-keybinding-not-found",
     "displayName": "404 Keybinding Not Found",
     "description": "A VSCode plugin that displays a 404 message for an assigned keybinding ",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "author": {
         "name": "Anthony Weston",
         "email": "11080358+AnthonyWeston@users.noreply.github.com",
