@@ -33,7 +33,9 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:404-keybinding-not-found.showNotFoundWarning"
+        "onCommand:404-keybinding-not-found.showNotFoundWarning",
+        "onCommand:404-keybinding-not-found.showMovedPermanentlyWarning",
+        "onCommand:404-keybinding-not-found.ImATeapot"
     ],
     "main": "./dist/extension.js",
     "contributes": {
@@ -41,7 +43,17 @@
             {
                 "command": "404-keybinding-not-found.showNotFoundWarning",
                 "category": "404 Keybinding Not Found",
-                "title": "Not found"
+                "title": "404 Not found"
+            },
+            {
+                "command": "404-keybinding-not-found.showMovedPermanentlyWarning",
+                "category": "404 Keybinding Not Found",
+                "title": "301 Moved permanently"
+            },
+            {
+                "command": "404-keybinding-not-found.ImATeapot",
+                "category": "404 Keybinding Not Found",
+                "title": "418 I'm a teapot"
             }
         ]
     },
