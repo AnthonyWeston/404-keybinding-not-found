@@ -1,88 +1,96 @@
 {
-    "name": "404-keybinding-not-found",
-    "displayName": "404 Keybinding Not Found",
-    "description": "A VSCode plugin that displays a 404 message for an assigned keybinding ",
-    "version": "1.1.0",
-    "author": {
-        "name": "Anthony Weston",
-        "email": "11080358+AnthonyWeston@users.noreply.github.com",
-        "url": "https://github.com/AnthonyWeston/"
-    },
-    "publisher": "AnthonyWeston",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/AnthonyWeston/404-keybinding-not-found/"
-    },
-    "bugs": {
-        "url": "https://github.com/AnthonyWeston/404-keybinding-not-found/issues/"
-    },
-    "keywords": [
-        "404",
-        "keybinding",
-        "keyboard",
-        "not found",
-        "notification",
-        "reminder",
-        "shortcut"
-    ],
-    "license": "Apache License Version 2.0",
-    "engines": {
-        "vscode": "^1.50.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:404-keybinding-not-found.showNotFoundWarning",
-        "onCommand:404-keybinding-not-found.showMovedPermanentlyWarning",
-        "onCommand:404-keybinding-not-found.ImATeapot"
-    ],
-    "main": "./dist/extension.js",
-    "contributes": {
-        "commands": [
-            {
-                "command": "404-keybinding-not-found.showNotFoundWarning",
-                "category": "404 Keybinding Not Found",
-                "title": "404 Not found"
-            },
-            {
-                "command": "404-keybinding-not-found.showMovedPermanentlyWarning",
-                "category": "404 Keybinding Not Found",
-                "title": "301 Moved permanently"
-            },
-            {
-                "command": "404-keybinding-not-found.ImATeapot",
-                "category": "404 Keybinding Not Found",
-                "title": "418 I'm a teapot"
-            }
-        ]
-    },
-    "icon": "img/404.png",
-    "scripts": {
-        "vscode:prepublish": "npm run package",
-        "compile": "webpack",
-        "watch": "webpack --watch",
-        "package": "webpack --mode production --devtool hidden-source-map",
-        "compile-tests": "tsc -p . --outDir out",
-        "watch-tests": "tsc -p -w . --outDir out",
-        "pretest": "npm run compile-tests && npm run compile && npm run lint",
-        "lint": "eslint src --ext ts",
-        "test": "node ./out/test/runTest.js"
-    },
-    "devDependencies": {
-        "@types/vscode": "^1.50.0",
-        "@types/glob": "^7.1.4",
-        "@types/mocha": "^9.0.0",
-        "@types/node": "16.x",
-        "@typescript-eslint/eslint-plugin": "^5.0.0",
-        "@typescript-eslint/parser": "^5.0.0",
-        "eslint": "^8.0.0",
-        "glob": "^7.2.0",
-        "mocha": "^9.1.2",
-        "typescript": "^4.4.3",
-        "ts-loader": "^9.2.6",
-        "webpack": "^5.58.1",
-        "webpack-cli": "^4.9.0",
-        "@vscode/test-electron": "^1.6.2"
-    }
+  "name": "404-keybinding-not-found",
+  "displayName": "404 Keybinding Not Found",
+  "description": "A VSCode plugin that displays a 404 message for an assigned keybinding ",
+  "version": "1.1.0",
+  "author": {
+    "name": "Anthony Weston",
+    "email": "11080358+AnthonyWeston@users.noreply.github.com",
+    "url": "https://github.com/AnthonyWeston/"
+  },
+  "publisher": "AnthonyWeston",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnthonyWeston/404-keybinding-not-found/"
+  },
+  "bugs": {
+    "url": "https://github.com/AnthonyWeston/404-keybinding-not-found/issues/"
+  },
+  "keywords": [
+    "404",
+    "keybinding",
+    "keyboard",
+    "not found",
+    "notification",
+    "reminder",
+    "shortcut"
+  ],
+  "license": "Apache License Version 2.0",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:404-keybinding-not-found.showNotFoundWarning",
+    "onCommand:404-keybinding-not-found.showMovedPermanentlyWarning",
+    "onCommand:404-keybinding-not-found.ImATeapot"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "404-keybinding-not-found.showNotFoundWarning",
+        "category": "404 Keybinding Not Found",
+        "title": "404 Not found"
+      },
+      {
+        "command": "404-keybinding-not-found.showMovedPermanentlyWarning",
+        "category": "404 Keybinding Not Found",
+        "title": "301 Moved permanently"
+      },
+      {
+        "command": "404-keybinding-not-found.ImATeapot",
+        "category": "404 Keybinding Not Found",
+        "title": "418 I'm a teapot"
+      }
+    ]
+  },
+  "icon": "img/404.png",
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p -w . --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "type-coverage": "type-coverage --update --at-least=95",
+    "type-coverage-report": "typescript-coverage-report --threshold=95"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.50.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vscode/test-electron": "^1.6.2",
+    "eslint": "^8.0.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.2",
+    "ts-loader": "^9.2.6",
+    "type-coverage": "^2.18.2",
+    "typescript": "^4.4.3",
+    "typescript-coverage-report": "^0.6.1",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "typeCoverage": {
+    "atLeast": 95,
+    "update": true
+  }
 }

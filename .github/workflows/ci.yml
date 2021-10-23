@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  type-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: npm ci
+        run: npm ci
+      - name: Type coverage
+        run: npm run type-coverage
+
+      - name: Type Coverage
+        run: npm run type-coverage-report
+      - name: Artifact - Type Coverage Report
+        uses: actions/upload-artifact@v2.2.4
+        with: 
+          name: type-coverage-report
+          path: coverage-ts
+          if-no-files-found: error
+      
+      - name: Update package.json
+        uses: EndBug/add-and-commit@v7
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/development' }}
+        with:
+          add: package.json
+          message: Update type coverage
+          pull: NO-PULL
+          push: true
