@@ -1,6 +1,6 @@
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/azure-devops/installs/total/anthonyweston.404-keybinding-not-found?color=green&label=Installs&logo=visualstudiocode&logoColor=%23007ACC)](https://marketplace.visualstudio.com/items?itemName=AnthonyWeston.404-keybinding-not-found)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/AnthonyWeston/404-keybinding-not-found?label=Version)
-![GitHub Workflow Status (Build & Deploy)](https://img.shields.io/github/workflow/status/AnthonyWeston/404-keybinding-not-found/Deploy/main?label=Build%20%26%20Deploy)
+![GitHub Workflow Status (Build & Deploy)](https://img.shields.io/github/workflow/status/AnthonyWeston/404-keybinding-not-found/Deploy?label=Build%20%26%20Deploy)
 ![GitHub Workflow Status (CI)](https://img.shields.io/github/workflow/status/AnthonyWeston/404-keybinding-not-found/CI/main?label=CI)
 [![Type coverage](https://img.shields.io/badge/dynamic/json.svg?label=Type+Coverage&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2FAnthonyWeston%2F404-keybinding-not-found%2Fdevelopment%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 
