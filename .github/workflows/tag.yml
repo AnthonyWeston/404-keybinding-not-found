@@ -1,0 +1,32 @@
+name: Tag
+
+
+on:
+  workflow_dispatch:
+    branches:
+      - master
+      - development
+    inputs:
+      type:
+        description: 'Type of release (major/minor/patch)'
+        required: true
+        default: patch
+      
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    # environment: Main Branch
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: npm ci
+        run: npm ci
+      - name: Tag
+        run: npm version "${{ inputs.type }}"
+      - name: Push to git
+        run: |
+          tag=v$(git log -1 --pretty=%B)
+          git push origin HEAD $tag
+        
+
