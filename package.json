@@ -2,7 +2,7 @@
   "name": "404-keybinding-not-found",
   "displayName": "404 Keybinding Not Found",
   "description": "A VSCode plugin that displays a 404 message for an assigned keybinding ",
-  "version": "1.1.1",
+  "version": "1.6.0",
   "author": {
     "name": "Anthony Weston",
     "email": "11080358+AnthonyWeston@users.noreply.github.com",
@@ -66,6 +66,7 @@
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p -w . --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "postversion": "npm run type-coverage && git commit --amend --no-edit package.json",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
     "type-coverage": "type-coverage --update --at-least=95",
@@ -90,7 +91,7 @@
     "webpack-cli": "^4.9.0"
   },
   "typeCoverage": {
-    "atLeast": 95,
+    "atLeast": 100,
     "update": true
   }
 }
