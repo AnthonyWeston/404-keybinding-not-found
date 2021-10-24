@@ -2,6 +2,11 @@ name: Tag
 
 
 on:
+  push:
+    branches:
+      - master
+      - development
+      
   workflow_dispatch:
     branches:
       - master
@@ -23,7 +28,7 @@ jobs:
       - name: npm ci
         run: npm ci
       - name: Tag
-        run: npm version "${{ inputs.type }}"
+        run: npm version patch # "${{ inputs.type }}"
       - name: Push to git
         run: |
           tag=v$(git log -1 --pretty=%B)
