@@ -60,13 +60,16 @@
   "icon": "img/404.png",
   "scripts": {
     "vscode:prepublish": "npm run package",
+    "commit": "git commit --amend --no-edit -a",
     "compile": "webpack",
     "watch": "webpack --watch",
     "package": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p -w . --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "postversion": "npm run type-coverage && npm run commit && npm run tag",
     "lint": "eslint src --ext ts",
+    "tag": "git tag v$npm_package_version",
     "test": "node ./out/test/runTest.js",
     "type-coverage": "type-coverage --update --at-least=95",
     "type-coverage-report": "typescript-coverage-report --threshold=95"
@@ -90,7 +93,7 @@
     "webpack-cli": "^4.9.0"
   },
   "typeCoverage": {
-    "atLeast": 95,
+    "atLeast": 100,
     "update": true
   }
 }
