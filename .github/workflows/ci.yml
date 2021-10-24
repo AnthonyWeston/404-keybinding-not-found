@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   type-coverage:
@@ -13,9 +16,6 @@ jobs:
       - uses: actions/setup-node@v2
       - name: npm ci
         run: npm ci
-      - name: Type coverage
-        run: npm run type-coverage
-
       - name: Type Coverage
         run: npm run type-coverage-report
       - name: Artifact - Type Coverage Report
@@ -24,12 +24,3 @@ jobs:
           name: type-coverage-report
           path: coverage-ts
           if-no-files-found: error
-      
-      - name: Update package.json
-        uses: EndBug/add-and-commit@v7
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/development' }}
-        with:
-          add: package.json
-          message: Update type coverage
-          pull: NO-PULL
-          push: true
